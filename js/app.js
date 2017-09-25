@@ -1,15 +1,15 @@
 let socket = io.connect('http://localhost:8080');
-let coockie_app_chat = '_vsvn_chatbot';
+let cookie_app_chat = '_vsvn_chatbot';
 
 $(function(){
     let utility = new Utilities();
 
-    if(cookie_chat_id = utility.getCookie(coockie_app_chat)){
+    if(cookie_chat_id = utility.getCookie(cookie_app_chat)){
         socket.emit('join-room', {room_id: cookie_chat_id});
     }else{
         //Generate chat id stored by coockie
         let cookie_chat_id = utility.generateId();
-        utility.setCookie(coockie_app_chat, cookie_chat_id, 1);
+        utility.setCookie(cookie_app_chat, cookie_chat_id, 1);
 
         socket.emit('join-room', {room_id: cookie_chat_id});
     }

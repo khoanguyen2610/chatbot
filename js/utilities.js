@@ -3,7 +3,10 @@ let Utilities = function () {
 
 }
 
-//Set coockie
+/*============================================================
+ * Set cookie
+ * @input: cname: cookie name, cvalue: cookie value, exdays: expire days
+ *============================================================*/
 Utilities.prototype.setCookie = function(cname, cvalue, exdays) {
     var d = new Date();
     d.setTime(d.getTime() + (exdays*24*60*60*1000));
@@ -11,7 +14,10 @@ Utilities.prototype.setCookie = function(cname, cvalue, exdays) {
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 
-//Get coockie
+/*============================================================
+ * Get cookie
+ * @input: cname: coockie name
+ *============================================================*/
 Utilities.prototype.getCookie = function(cname) {
     var name = cname + "=";
     var decodedCookie = decodeURIComponent(document.cookie);
@@ -28,15 +34,20 @@ Utilities.prototype.getCookie = function(cname) {
     return "";
 }
 
-//Check coockie exist
+/*============================================================
+ * Check cookie exist
+ * @input: cname: cookie name
+ *============================================================*/
 Utilities.prototype.checkCookie = function(cname) {
     var data = getCookie(cname);
     if (data != "") return data;
     return false;
 }
 
-// generateId :: Integer -> String
-Utilities.prototype.generateId = function(len) {
+/*============================================================
+ * GenerateId
+ *============================================================*/
+Utilities.prototype.generateId = function() {
     function s4() {
         return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
     }

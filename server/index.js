@@ -7,6 +7,9 @@ var server      = require('http').Server(app);
 var io          = require('socket.io').listen(8080);
 
 
+
+var CuteBot     = require('./cutebot');
+var temp = new CuteBot();
 /*============================================================
  * Socket.io
  *============================================================*/

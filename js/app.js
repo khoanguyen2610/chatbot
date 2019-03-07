@@ -1,4 +1,4 @@
-let socket = io.connect('http://localhost:8080');
+let socket = io.connect('http://localhost:8880');
 let cookie_app_chat = '_vsvn_chatbot';
 
 $(function(){
